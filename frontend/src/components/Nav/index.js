@@ -11,7 +11,7 @@ const Nav = () => {
         {({ data: { categories } }) => {
           return (
             <div>
-              <nav className="uk-navbar-container" data-uk-navbar>
+              {/* <nav className="uk-navbar-container" data-uk-navbar>
                 <div className="uk-navbar-left">
                   <ul className="uk-navbar-nav">
                     <li>
@@ -36,7 +36,48 @@ const Nav = () => {
                     })}
                   </ul>
                 </div>
+              </nav> */}
+
+              <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <Link to="/">Strapi Blog</Link>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <ul class="navbar-nav">
+                        {
+                          categories.map((category, i) => {
+                            return (
+
+                              <li class="nav-item" key={i}>
+                                <Link class="nav-link active" aria-current="page"
+                                  to={`/category/${category.slug}`}
+
+                                >
+                                  {category.name}
+                                </Link>
+                                {/* <a class="nav-link active" aria-current="page" href="#">{category.name}</a> */}
+                              </li>
+                            )
+                          })
+                        }
+
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
               </nav>
+
+
+
+
+
+
             </div>
           );
         }}
