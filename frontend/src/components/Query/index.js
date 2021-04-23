@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
 const Query = ({ children, query, slug }) => {
+  console.log('query slug', slug)
   const { data, loading, error } = useQuery(query, {
     variables: { slug: slug }
   });
@@ -12,5 +13,3 @@ const Query = ({ children, query, slug }) => {
 };
 
 export default Query;
-
-// We are using the useQuery hook to call your Strapi server at this address http://localhost:1337/graphql. We are sending an id if it exists (it will be necessary when you'll want to fetch just one article).

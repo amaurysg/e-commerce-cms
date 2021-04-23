@@ -11,7 +11,7 @@ const Nav = () => {
         {({ data: { categories } }) => {
           return (
             <div>
-              {/* <nav className="uk-navbar-container" data-uk-navbar>
+              <nav className="uk-navbar-container" data-uk-navbar>
                 <div className="uk-navbar-left">
                   <ul className="uk-navbar-nav">
                     <li>
@@ -36,9 +36,9 @@ const Nav = () => {
                     })}
                   </ul>
                 </div>
-              </nav> */}
+              </nav>
 
-              <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+              {/* <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                   <a className="navbar-brand" href="#">
                     <Link to="/">Strapi Blog</Link>
@@ -55,12 +55,12 @@ const Nav = () => {
 
                               <li className="nav-item" key={i}>
                                 <Link className="nav-link active" aria-current="page"
-                                  to={`/category/${category.slug}`}
+                                  to={`/category/${category.id}`}
 
                                 >
                                   {category.name}
                                 </Link>
-                                {/* <a class="nav-link active" aria-current="page" href="#">{category.name}</a> */}
+
                               </li>
                             )
                           })
@@ -71,7 +71,7 @@ const Nav = () => {
                     </div>
                   </div>
                 </div>
-              </nav>
+              </nav> */}
 
 
 
