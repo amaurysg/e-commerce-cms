@@ -1,13 +1,16 @@
 import React from 'react'
+
 import Card from '../Card'
 
 const Articles = ({ articles }) => {
+  // console.log(articles)
 
   const leftArticlesCount = Math.ceil(articles.length / 5);
   const leftArticles = articles.slice(0, leftArticlesCount);
   const rightArticles = articles.slice(leftArticlesCount, articles.length);
 
   return (
+
     <div>
       <div className="uk-child-width-1-2" data-uk-grid>
         <div>
@@ -24,7 +27,11 @@ const Articles = ({ articles }) => {
         </div>
       </div>
     </div>
-  );
+
+
+
+  )
+
 };
 
 export default Articles;
