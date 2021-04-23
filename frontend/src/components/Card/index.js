@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CardArticle from 'react-bootstrap/Card'
 
 
 const Card = ({ article }) => {
@@ -10,7 +11,7 @@ const Card = ({ article }) => {
 
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
-      <div className="uk-card uk-card-muted">
+      {/* <div className="uk-card uk-card-muted">
         <div className="uk-card-media-top">
           <img
             src={imageUrl}
@@ -26,8 +27,43 @@ const Card = ({ article }) => {
             {article.title}
           </p>
         </div>
-      </div>
+      </div> */}
+      <CardArticle>
+        <CardArticle.Img variant="top" src={imageUrl} alt={article.image.url} />
+        <CardArticle.Body>
+          <CardArticle.Title>{article.title}</CardArticle.Title>
+          <CardArticle.Text>
+            {article.category.name}
+          </CardArticle.Text>
+        </CardArticle.Body>
+        <CardArticle.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </CardArticle.Footer>
+      </CardArticle>
+
+
     </Link>
+
+    // <CardGroup>
+
+
+    //   <Card>
+    //     <Card.Img variant="top" src="localhost:1337/uploads/1024_2000_c942796a78.jpg" />
+    //     <Card.Body>
+    //       <Card.Title>Card title</Card.Title>
+    //       <Card.Text>
+    //         This is a wider card with supporting text below as a natural lead-in to
+    //         additional content. This card has even longer content than the first to
+    //         show that equal height action.
+    //   </Card.Text>
+    //     </Card.Body>
+    //     <Card.Footer>
+    //       <small className="text-muted">Last updated 3 mins ago</small>
+    //     </Card.Footer>
+    //   </Card>
+    // </CardGroup>
+
+
   )
 
 }
