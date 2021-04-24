@@ -1,14 +1,10 @@
-
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 const CATEGORY_ARTICLES_QUERY = gql`
-  query Category($id: ID!) {
-    category(id: $id) {
-      id
-      slug
+  query Category($slug: String!){
+    categories(where: {slug: $slug}) {
       name
       articles {
-        id
         slug
         title
         content
@@ -17,7 +13,6 @@ const CATEGORY_ARTICLES_QUERY = gql`
         }
         category {
           slug
-          id
           name
         }
       }

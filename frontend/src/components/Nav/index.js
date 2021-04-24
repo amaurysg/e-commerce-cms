@@ -1,10 +1,13 @@
 import React from "react";
 import Query from "../Query";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import CATEGORIES_QUERY from "../../queries/category/categories";
 
 const Nav = () => {
+
+  let { id } = useParams()
+
   return (
     <div>
       <Query query={CATEGORIES_QUERY} id={null}>
@@ -37,7 +40,6 @@ const Nav = () => {
                   </ul>
                 </div>
               </nav>
-
               {/* <nav className="navbar navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                   <a className="navbar-brand" href="#">

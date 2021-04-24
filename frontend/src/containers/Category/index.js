@@ -5,21 +5,27 @@ import Query from "../../components/Query";
 import CATEGORY_ARTICLES_QUERY from "../../queries/category/articles";
 
 const Category = () => {
-  let { slug } = useParams();
+
+
+  let { id, slug } = useParams();
+
 
   return (
-    <Query query={CATEGORY_ARTICLES_QUERY} id={slug}>
-      {({ data: { category } }) => {
-        return (
-          <div onClick={() => console.log('hola')}>
-            <div className="uk-section">
-              <div className="uk-container uk-container-large">
-                <h1>{category.name}</h1>
-                <Articles articles={category.articles} />
+    <Query query={CATEGORY_ARTICLES_QUERY} slug={slug}>
+      {({ data: { categories } }) => {
+
+        if (categories.length) {
+          return (
+            <div>
+              <div className="uk-section">
+                <div className="uk-container uk-container-large">
+                  <h1>{categories[0].name}</h1>
+                  <Articles articles={categories[0].articles} />
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        }
       }}
     </Query>
   );

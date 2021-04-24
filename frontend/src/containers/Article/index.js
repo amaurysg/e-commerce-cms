@@ -1,16 +1,19 @@
-import React from "react";
-import { useParams } from "react-router";
-import Query from "../../components/Query";
+import React from 'react'
+import { useParams } from 'react-router'
+import Query from '../../components/Query'
+import ARTICLE_QUERY from '../../queries/article/article'
+import Moment from 'react-moment'
 import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
 
-import ARTICLE_QUERY from "../../queries/article/article";
 
 const Article = () => {
-  let { id } = useParams();
+
+  const { id } = useParams()
+
+
 
   return (
-    <Query query={ARTICLE_QUERY} slug={id}>
+    <Query query={ARTICLE_QUERY} slug={id} >
       {({ data: { articles } }) => {
 
         if (articles.length) {
@@ -39,12 +42,14 @@ const Article = () => {
                   </p>
                 </div>
               </div>
+              <p>{articles[0].content}</p>
+
             </div>
           );
         }
       }}
     </Query>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article
