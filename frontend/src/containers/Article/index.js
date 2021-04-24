@@ -18,11 +18,18 @@ const Article = () => {
     <Query query={ARTICLE_QUERY} slug={id} >
       {({ data: { articles } }) => {
 
-        if (articles.length) {
+        if (articles) {
+          // const for image
           const imageUrl =
             process.env.NODE_ENV !== "development"
               ? articles[0].image.url
               : process.env.REACT_APP_BACKEND_URL + articles[0].image.url;
+
+          // const for video 
+          const videoUrl =
+            process.env.NODE_ENV !== "development"
+              ? articles[0].video[0].url
+              : process.env.REACT_APP_BACKEND_URL + articles[0].video[0].url;
 
           return (
             <>
@@ -46,6 +53,9 @@ const Article = () => {
                   </div>
                 </div>
                 <p>{articles[0].content}</p>
+                <video src={videoUrl} width="750" height="500" controls >
+                </video>
+
 
               </div>
             </>

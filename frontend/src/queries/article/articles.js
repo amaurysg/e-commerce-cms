@@ -6,7 +6,7 @@ const ARTICLES_QUERY = gql`
       id
       slug
       title
-      content
+      content 
       category {
         id
         slug
@@ -15,6 +15,7 @@ const ARTICLES_QUERY = gql`
       image {
         url
       }
+      
     }
   }
 `;

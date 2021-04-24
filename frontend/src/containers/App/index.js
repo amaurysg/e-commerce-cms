@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Nav from '../../components/Nav'
-import Heros from '../Heros'
+// import Heros from '../Heros'
 import Articles from '../Articles'
 import Article from '../Article'
 import Category from '../Category'
-import Error404 from '../../components/Error404'
+// import Error404 from '../../components/Error404'
+import Footer from '../../components/Footer'
 
 
 
@@ -21,16 +22,16 @@ const App = () => {
 
       <Switch>
 
+        <Route path="/" component={Articles} exact />
         <Route path="/article/:id" component={Article} exact />
         <Route path="/category/:slug" component={Category} />
-        <Route path="/" component={Articles} exact />
-        <Redirect to={Error404} />
+
 
       </Switch>
 
 
 
-
+      <Footer />
 
 
 
