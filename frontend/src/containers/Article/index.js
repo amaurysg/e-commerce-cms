@@ -36,48 +36,28 @@ const Article = () => {
 
           return (
             <>
-              {/* <div>
-                <div
-                  id="banner"
-                  className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-                  data-src={imageUrl}
-                  data-srcset={imageUrl}
-                  data-uk-img
-                >
-                  <h1>{articles[0].title}</h1>
-                </div>
 
-                <div className="uk-section">
-                  <div className="uk-container uk-container-small">
-                    <ReactMarkdown source={articles[0].content} />
-                    <p>
-                      <Moment format="MMM Do YYYY">{articles[0].published_at}</Moment>
-                    </p>
-                  </div>
-                </div>
-                <p class="" >{articles[0].content}</p>
-                <video src={videoUrl} width="750" height="500" controls >
-                </video>
+              <div className='card-wrapper'>
 
+                <Card>
+                  <Card.Img variant="top" src={imageUrl} />
+                  <Card.Body>
+                    <Card.Title >{articles[0].title}</Card.Title>
+                    <Card.Text  >
+                      {articles[0].content}
+                    </Card.Text>
+                    <Card.Text className="article-video" style={{ textAlign: 'center', maxWidth: '1200px' }} >
+                      <video src={videoUrl} width="100%" height="500" controls />
+                    </Card.Text>
+                  </Card.Body>
 
-              </div> */}
-
-              <Card>
-                <Card.Img variant="top" src={imageUrl} />
-                <Card.Body>
-                  <Card.Title>{articles[0].title}</Card.Title>
-                  <Card.Text>
-                    {articles[0].content}
-                  </Card.Text>
-                  <Card.Text style={{ textAlign: 'center', width: '100%' }}>
-                    <video src={videoUrl} width="750" height="500" controls />
-                  </Card.Text>
-                </Card.Body>
-
-                <Card.Footer>
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </Card.Footer>
-              </Card>
+                  <Card.Footer>
+                    <Moment format="D MMM YYYY">
+                      <small >{articles[0].publishedAt}</small>
+                    </Moment>
+                  </Card.Footer>
+                </Card>
+              </div>
 
             </>
           );

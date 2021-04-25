@@ -8,9 +8,9 @@ const Home = () => {
   return (
     <>
       <Heros />
-      <div>
-        <div className="uk-section">
-          <div className="uk-container uk-container-large">
+      <div className="articles-home">
+        <div className="uk-section " >
+          <div className="uk-container">
 
             <Query query={ARTICLES_QUERY}>
               {({ data: { articles } }) => {

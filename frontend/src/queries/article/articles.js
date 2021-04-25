@@ -16,6 +16,10 @@ const ARTICLES_QUERY = gql`
       image {
         url
       }
+      publishedAt
+      author{
+        name
+      }
       
     }
   }

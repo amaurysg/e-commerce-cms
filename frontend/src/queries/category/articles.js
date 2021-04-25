@@ -9,11 +9,15 @@ const CATEGORY_ARTICLES_QUERY = gql`
         title
         content
         description
+        publishedAt
         image {
           url
         }
         category {
           slug
+          name
+        }
+        author{
           name
         }
       }

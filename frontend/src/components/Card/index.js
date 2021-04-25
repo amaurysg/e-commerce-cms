@@ -18,25 +18,34 @@ const Card = ({ article }) => {
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
 
-      <CardBootstrap>
-        <CardBootstrap.Img variant="top" src={imageUrl} />
-        {/* <Image src={imageUrl} fluid /> */}
-        <CardBootstrap.Body>
-          <CardBootstrap.Title>{article.title}</CardBootstrap.Title>
-          <CardBootstrap.Text>
-            <p>  {article.description}</p>
+      <div className='card-wrapper'>
+        <CardBootstrap className="card">
+          <CardBootstrap.Img variant="top" src={imageUrl} />
+          {/* <Image src={imageUrl} fluid /> */}
+          <CardBootstrap.Body>
+            <CardBootstrap.Title className="card-title">{article.title}</CardBootstrap.Title>
+            <CardBootstrap.Text className="card-content">
+              <p >  {article.description}</p>
+            </CardBootstrap.Text>
+            <CardBootstrap.Text style={{ margin: '0px' }}>
+              <small className="card-author" >by {article.author.name} </small>
 
-          </CardBootstrap.Text>
-        </CardBootstrap.Body>
-        <CardBootstrap.Footer>
-          {/* <small className="text-muted">{article.category.name}</small> */}
-          <p>
-            <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-          </p>
-        </CardBootstrap.Footer>
-      </CardBootstrap>
+            </CardBootstrap.Text>
+            <CardBootstrap.Text style={{ margin: '0px' }}>
+              <small className="card-category"> {article.category.name} </small>
 
+            </CardBootstrap.Text>
+          </CardBootstrap.Body>
+          <CardBootstrap.Footer>
+            {/* <small className="text-muted">{article.category.name}</small> */}
 
+            <Moment format="MMM Do YYYY" className="card-publish">{article.publishedAt}</Moment>
+
+          </CardBootstrap.Footer>
+        </CardBootstrap>
+      </div>
+
+      {/* style={{ color: '#107B0F', fontWeight: 'bold' } */}
 
     </Link>
 

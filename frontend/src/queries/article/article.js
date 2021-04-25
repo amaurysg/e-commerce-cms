@@ -17,6 +17,11 @@ const ARTICLE_QUERY = gql`
       video{
         url
       }
+      author{
+        name
+      }
+      publishedAt
+      
     }
   }
 `;
