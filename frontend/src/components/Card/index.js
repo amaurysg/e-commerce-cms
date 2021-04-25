@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import CardBootstrap from 'react-bootstrap/Card'
+import Image from 'react-bootstrap/Image'
 // import CardArticle from 'react-bootstrap/Card'
+import Moment from 'react-moment'
 
 
 const Card = ({ article }) => {
   // console.log(article)
-
-
-  console.log('in card id', article.id)
-  console.log('in  card title', article.title)
-  console.log('in  card slug', article.slug)
 
 
   const imageUrl =
@@ -19,23 +17,26 @@ const Card = ({ article }) => {
 
   return (
     <Link to={`/article/${article.slug}`} className="uk-link-reset">
-      <div className="uk-card uk-card-muted">
-        <div className="uk-card-media-top">
-          <img
-            src={imageUrl}
-            alt={article.image.url}
-            height="100"
-          />
-        </div>
-        <div className="uk-card-body">
-          <p id="category" className="uk-text-uppercase">
-            {article.category.name}
+
+      <CardBootstrap>
+        <CardBootstrap.Img variant="top" src={imageUrl} />
+        {/* <Image src={imageUrl} fluid /> */}
+        <CardBootstrap.Body>
+          <CardBootstrap.Title>{article.title}</CardBootstrap.Title>
+          <CardBootstrap.Text>
+            <p>  {article.description}</p>
+
+          </CardBootstrap.Text>
+        </CardBootstrap.Body>
+        <CardBootstrap.Footer>
+          {/* <small className="text-muted">{article.category.name}</small> */}
+          <p>
+            <Moment format="MMM Do YYYY">{article.published_at}</Moment>
           </p>
-          <p id="title" className="uk-text-large">
-            {article.title}
-          </p>
-        </div>
-      </div>
+        </CardBootstrap.Footer>
+      </CardBootstrap>
+
+
 
     </Link>
 
@@ -46,3 +47,9 @@ const Card = ({ article }) => {
 }
 
 export default Card
+
+
+
+
+
+

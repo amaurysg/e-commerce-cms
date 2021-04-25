@@ -8,6 +8,7 @@ const CATEGORY_ARTICLES_QUERY = gql`
         slug
         title
         content
+        description
         image {
           url
         }

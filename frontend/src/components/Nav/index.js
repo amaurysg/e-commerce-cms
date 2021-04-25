@@ -13,9 +13,9 @@ const Nav = () => {
       <Query query={CATEGORIES_QUERY} id={null}>
         {({ data: { categories } }) => {
           return (
-            <div>
+            <div className="navar-container">
 
-              <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+              <nav className="navbar navbar-expand-lg navbar-light bg-light bg-xbox">
                 <div className="container-fluid">
                   <a className="navbar-brand" href="#">
                     <Link to="/">Strapi Blog</Link>

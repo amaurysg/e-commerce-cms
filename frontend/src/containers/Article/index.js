@@ -4,6 +4,9 @@ import Query from '../../components/Query'
 import ARTICLE_QUERY from '../../queries/article/article'
 import Moment from 'react-moment'
 import ReactMarkdown from "react-markdown";
+import Card from 'react-bootstrap/Card'
+import ReactPlayer from 'react-player'
+
 
 
 const Article = () => {
@@ -33,7 +36,7 @@ const Article = () => {
 
           return (
             <>
-              <div>
+              {/* <div>
                 <div
                   id="banner"
                   className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
@@ -52,12 +55,30 @@ const Article = () => {
                     </p>
                   </div>
                 </div>
-                <p>{articles[0].content}</p>
+                <p class="" >{articles[0].content}</p>
                 <video src={videoUrl} width="750" height="500" controls >
                 </video>
 
 
-              </div>
+              </div> */}
+
+              <Card>
+                <Card.Img variant="top" src={imageUrl} />
+                <Card.Body>
+                  <Card.Title>{articles[0].title}</Card.Title>
+                  <Card.Text>
+                    {articles[0].content}
+                  </Card.Text>
+                  <Card.Text style={{ textAlign: 'center', width: '100%' }}>
+                    <video src={videoUrl} width="750" height="500" controls />
+                  </Card.Text>
+                </Card.Body>
+
+                <Card.Footer>
+                  <small className="text-muted">Last updated 3 mins ago</small>
+                </Card.Footer>
+              </Card>
+
             </>
           );
         }

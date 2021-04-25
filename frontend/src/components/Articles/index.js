@@ -5,18 +5,16 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import CardDeck from 'react-bootstrap/CardDeck'
 
 
-const Articles = ({ articles, heros }) => {
+const Articles = ({ articles }) => {
   // console.log(articles)
 
-  const leftArticlesCount = Math.ceil(articles.length / 5);
-  const leftArticles = articles.slice(0, leftArticlesCount);
-  const rightArticles = articles.slice(leftArticlesCount, articles.length);
+
 
   return (
 
     <>
       <div>
-        <CardDeck>
+        <CardGroup>
 
           <div>
             <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
@@ -25,7 +23,10 @@ const Articles = ({ articles, heros }) => {
               })}
             </div>
           </div>
-        </CardDeck>
+
+
+
+        </CardGroup>
 
       </div>
     </>
