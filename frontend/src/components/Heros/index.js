@@ -4,8 +4,8 @@ import Carousel from 'react-bootstrap/Carousel'
 const Heros = ({ heros }) => {
 
   return (
-    <div>
-      <Carousel fade>
+    <div className="hero-wrapper">
+      <Carousel fade className='hero-carousel'>
         {
           heros.map((hero, i) => {
             const imageUrl =

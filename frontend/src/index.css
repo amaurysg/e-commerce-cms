@@ -70,6 +70,16 @@ bottom: -60px;
 
 }
 
+.hero-wrapper{
+  background-color: #1F1F22;
+
+}
+
+.hero-carousel{
+ 
+
+}
+
 
 .text-slider::before{
   content:'';
@@ -84,7 +94,12 @@ bottom: -60px;
   
   filter:brightness(1);
   font-family: 'Chakra Petch', sans-serif;
-  color:#fff;
+  color:#19DD1E;
+  font-weight: bold;
+  
+  
+ 
+  
 
 
 }
@@ -178,3 +193,45 @@ font-weight: bold;
   background-color: #1F1F22;
 }
 
+.footer-link{
+  color:#107B0F;
+  font-weight:bold;
+}
+.footer-link:hover{
+  color:#111114;
+  text-decoration: none;
+  
+}
+.footer-games{
+  color: #19DD1E;
+  font-size: 1.5em;
+  margin:0;
+}
+.footer-games:hover{
+  color: #107B0F;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .card-title {
+    font-size: 2em;
+  }
+
+}
+@media only screen and (min-width: 600px) {
+  .text-slider {
+    height: 300px;
+  
+  }
+  .title-slider{
+    font-size: 4em;
+  }
+  .title-content{
+    font-size: 2em;
+  }
+
+}
