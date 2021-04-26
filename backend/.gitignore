@@ -102,9 +102,9 @@ node_modules
 testApp
 coverage
 
-############################
+#############################
 # Strapi
-############################
+##############################
 
 .env
 license.txt
@@ -112,3 +112,7 @@ exports
 *.cache
 build
 .strapi-updater.json
+
+# hide for deploy
+##############################
+package-lock.json

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Nav from '../../components/Nav'
 // import Heros from '../Heros'
 import Articles from '../Articles'
@@ -24,7 +24,12 @@ const App = () => {
 
         <Route path="/" component={Articles} exact />
         <Route path="/article/:id" component={Article} exact />
-        <Route path="/category/:slug" component={Category} />
+        <Route path="/category/:slug" component={Category} exact />
+        <Redirect to="/" />
+        <Redirect
+          exact from={'/article/:id'}
+          to={'/category/:slug'}
+        />
 
 
       </Switch>

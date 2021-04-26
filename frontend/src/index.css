@@ -130,7 +130,8 @@ max-width:1200px;
 }
 .card-wrapper{
  
-  background-color:  #111114;
+  /* background-color:  #111114; */
+  
   
   
 }
@@ -140,6 +141,7 @@ max-width:1200px;
   margin:0 auto;
   background-color: #111114;
    border: .5px solid #107B0F;
+  
 }
 .card-title{
   color:#19DD1E;
