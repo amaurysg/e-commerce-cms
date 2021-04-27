@@ -26,10 +26,7 @@ const App = () => {
         <Route path="/article/:id" component={Article} exact />
         <Route path="/category/:slug" component={Category} exact />
         <Redirect to="/" />
-        <Redirect
-          exact from={'/article/:id'}
-          to={'/category/:slug'}
-        />
+        
 
 
       </Switch>
